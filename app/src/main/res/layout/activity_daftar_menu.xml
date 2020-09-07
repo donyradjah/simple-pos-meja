@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".DaftarMenuActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listMenu"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/totalPesanan"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <RelativeLayout
+        android:id="@+id/totalPesanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:paddingHorizontal="@dimen/_10sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnBayar">
+
+        <TextView
+            android:id="@+id/tvTotalPesanan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Jumlah Pesanan :"
+            android:textSize="@dimen/_18ssp" />
+
+        <TextView
+            android:id="@+id/tvTotalItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTotalPesanan"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="0 Item"
+            android:textSize="@dimen/_14ssp" />
+
+        <TextView
+            android:id="@+id/tvTotalBayar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTotalItem"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Rp 0"
+            android:textSize="@dimen/_14ssp" />
+
+        <EditText
+            android:id="@+id/edNamaPemesan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTotalBayar"
+            android:hint="Masukan Nama Pemesan . . ."
+            android:textColor="@android:color/black" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnBayar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:text="Bayar"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
